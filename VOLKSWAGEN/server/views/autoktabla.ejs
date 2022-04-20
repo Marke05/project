@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autok</title>
+    <style>
+      table,th,td{
+        border: 2px black solid;
+      }
+      td,th{
+        width: 10%;
+      }
+      td{
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Autok feltöltése</h1>
+    <form action="api/auto/feltolt" method="post" enctype="multipart/form-data">
+    <input type="text" name="marka" id="marka" />
+    <select name="elektromos" id="elektromos">
+      <option value="elektromos">elektromos</option>
+      <option value="benzin">benzin</option>
+      <option value="dizel">dizel</option>
+      <option value="hibrid">hibrid</option>
+    </select>
+    <input type="number" name="ar" id="ar" />
+    <input type="file" name="kep" id="kep" />
+    <input type="submit" value="Feltöltés" />
+  </form>
+    <h1>Autok</h1>
+    <table>
+      <tr>
+        <th>Model</th>
+        <th>uzemanzag</th>
+        <th>ar</th>
+        <th>kep</th>
+        <th>torol</th>
+      </tr>
+      <% auto.map(auto => { %>
+      <tr>
+        <td><p><%= auto.marka %></p></td>
+        <td><p><%= auto.elektromos %></p></td>
+        <td><p><%= auto.ar %></p></td>
+        <td><p><%= auto.kep %></p></td>
+        <td><button type="submit" onclick="torol(`<%= auto.kep %>`)">Töröl</button></td>
+      </tr> <% }) %>
+    </table>
+    <a href="/">kezdolap</a>
+    <script>
+      function torol(kep) {
+        fetch(`/api/auto/torol/${kep}`, { method: "DELETE" }).then(() =>
+          console.log(kep)
+        );
+      }
+    </script>
+  </body>
+</html>

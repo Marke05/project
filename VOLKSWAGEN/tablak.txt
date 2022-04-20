@@ -1,0 +1,3 @@
+users: nev, email, password
+autok: marka, elektromos, ara
+rendelesek: rendelesid, marka, uzemanyag, szin, rendelo(user), szemelyiszam

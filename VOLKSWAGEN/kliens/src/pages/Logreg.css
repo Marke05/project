@@ -1,0 +1,43 @@
+input{
+    display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button{
+    background-color: #27de07; 
+  border: #00184f 2px solid;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  width: 150px;
+}
+.reglog1{
+    width: 30%;
+    height: 250px;
+    border: 2px solid #00184f;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    top: 20%;
+    position: absolute;
+    right: 5%;
+    top: 35%;
+}
+button:hover{
+  color: #27de07;
+  background-color: #00184f;
+  text-decoration: none;
+}
+#autoreg{
+  width: 55%;
+  height: auto;
+  position: absolute;
+  top: 25%;
+}
+#autolog{
+  width: 55%;
+  height: auto;
+  position: absolute;
+  top: 25%;
+}

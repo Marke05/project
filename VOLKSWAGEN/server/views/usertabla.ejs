@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autok</title>
+    <style>
+      table,th,td{
+        border: 2px black solid;
+      }
+      td,th{
+        width: 10%;
+      }
+      td{
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+  </form>
+    <h1>Felhasznalok adatai</h1>
+    <table>
+      <tr>
+        <th>nev</th>
+        <th>email</th>
+        <th>torol</th>
+      </tr>
+      <% user.map(user => { %>
+      <tr>
+        <td><p><%= user.nev %></p></td>
+        <td><p><%= user.email %></p></td>
+        <td><button type="submit" onclick="torol(`<%= user.nev%>`)">Töröl</button></td>
+      </tr> <% }) %>
+    </table>
+    <a href="/">kezdolap</a>
+    <script>
+      function torol(nev) {
+        fetch(`/api/user/torol/${nev}`, { method: "DELETE" }).then(() =>
+          console.log(nev)
+        );
+      }
+    </script>
+  </body>
+</html>

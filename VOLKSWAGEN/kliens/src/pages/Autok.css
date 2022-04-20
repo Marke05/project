@@ -1,0 +1,21 @@
+.pageautok{
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+#auto{
+    width: 60%;
+    border: solid 2px #00184f;
+    border-radius: 5px;
+    margin: auto;
+    padding: 20px;
+    list-style-type: none;
+}
+select{
+    width: 185px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
