@@ -13,9 +13,9 @@ const userUpload = async (req, res) => {
     const newUser = new User({ nev, email, password });
     const user = await newUser.save();
 
-    res.status(201).redirect("http://localhost:3000/reg");
+    res.status(200).json(user);
   } catch (error) {
-    res.status(201).redirect("http://localhost:3000/reg");
+    res.status(500).json(error.message);
   }
 };
 

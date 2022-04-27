@@ -13,10 +13,10 @@ router.get("/", allUser);
 router.post("/feltolt", userUpload);
 
 // Név alapján szűrés felhasználóra
-router.post("/letolt", oneUser);
+router.post("/letolt", oneUser );
 
 // Név alapján felhasználó törlése
-router.delete("/torol/:nev", deleteUser);
+router.delete("/torol/:nev", deleteUser );
 
 // Felhasználói információk frissítése
 router.patch("/frissit", async (req, res) => {

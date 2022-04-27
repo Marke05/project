@@ -29,8 +29,7 @@ router.post("/feltolt", upload.single("kep"), async (req, res) => {
   const marka = req.body.marka;
   const elektromos = req.body.elektromos;
   const ar = req.body.ar;
-  const kep1 = req.file.originalname;
-  const kep = "../../public/kepek/" + kep1;
+  const kep = req.file.originalname;
 
   try {
     const newAuto = new Autok({ marka, elektromos, ar, kep });

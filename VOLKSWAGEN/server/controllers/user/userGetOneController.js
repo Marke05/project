@@ -18,12 +18,14 @@ const oneUser = async (req, res) => {
 
     if(pass ==  pwd){
       console.log("Belépve: 😃");
+      console.log(user);
       res.status(200).json(user);
     }
     else{
       console.log("Hibás jelszó: 🙁");
-      res.status(500).json(error.message);
+      res.status(404).json(error.message);
     } 
+    
   } catch (error) {
     res.status(500).json(error.message);
   }

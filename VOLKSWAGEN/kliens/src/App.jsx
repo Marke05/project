@@ -6,13 +6,13 @@ import Home from "./pages/Home";
 import Rolunk from "./pages/Rolunk";
 import Login from "./pages/Login";
 import Autok from "./pages/Autok";
-
-const isloged = "";
+//import React, {useState} from "react";
 
 
 function App() {
   
-  return (
+  
+    return (
     <Router>
       { <Navbar sticky="top"/> }
       <Routes>
@@ -24,6 +24,7 @@ function App() {
       </Routes>
     </Router>
   );
+  
 }
-
 export default App;
+

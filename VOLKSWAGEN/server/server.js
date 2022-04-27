@@ -34,7 +34,8 @@ app.use("/api/rendeles", require("./routes/rendelesRoute"));
 
 // Route-ok a auto-tábla szerkesztéséhez
 const Autok = require("./models/Autok");
-const User = require("./models/User")
+const User = require("./models/User");
+const Rendeles = require("./models/Rendeles");
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -55,6 +56,13 @@ app.get("/usertabla",async (req, res) => {
   const user = await User.find();
   res.render("usertabla.ejs", {
     user: user,
+  });
+});
+
+app.get("/rendelesek",async (req, res) => {
+  const rendeles = await Rendeles.find();
+  res.render("rendelesek.ejs", {
+    rendeles: rendeles,
   });
 });
 

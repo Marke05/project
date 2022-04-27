@@ -5,7 +5,7 @@ const deleteUser = async (req, res) => {
     const nev = req.params.nev;
     const user = await User.findOneAndDelete({ nev });
 
-    res.status(200).json({ msg: "Sikeres törlés!" });
+    res.redirect("/usertabla");
   } catch (error) {
     res.status(500).json(error.message);
   }

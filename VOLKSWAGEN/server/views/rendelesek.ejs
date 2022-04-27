@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autok</title>
+    <style>
+      table,th,td{
+        border: 2px black solid;
+      }
+      td,th{
+        width: 10%;
+      }
+      td{
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+  </form>
+    <h1>Felhasznalok adatai</h1>
+    <table>
+      <tr>
+        <th>email</th>
+        <th>szemelyiszam</th>
+        <th>marka</th>
+        <th>uzemanyag</th>
+        <th>szin</th>
+        <th>ar</th>
+        <th>torol</th>
+      </tr>
+      <% rendeles.map(rendelesek => { %>
+      <tr>
+        <td><p><%= rendelesek.rendeloemail %></p></td>
+        <td><p><%= rendelesek.szemelyiszam %></p></td>
+        <td><p><%= rendelesek.marka %></p></td>
+        <td><p><%= rendelesek.uzemanyag %></p></td>
+        <td><p><%= rendelesek.szin %></p></td>
+        <td><p><%= rendelesek.ar %></p></td>
+        <td><button type="submit" onclick="torol(`<%= rendelesek.id%>`)">Töröl</button></td>
+      </tr> <% }) %>
+    </table>
+    <a href="/">kezdolap</a>
+    <script>
+      function torol(id) {
+        fetch(`/api/rendeles/torol/${id}`, { method: "DELETE" }).then(() =>
+          console.log(id)
+        );
+      }
+    </script>
+  </body>
+</html>

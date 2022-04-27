@@ -12,10 +12,21 @@
     padding: 20px;
     list-style-type: none;
 }
+li{
+    list-style-type: none
+}
 select{
     width: 185px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+#kep{
+    width: 60%;
+    height: auto;
+}
+.hidden{
+    display:none;
+    visibility:hidden;
 }

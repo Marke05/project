@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pepe1973/React-Sablon#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.0",

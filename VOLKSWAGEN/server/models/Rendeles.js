@@ -2,12 +2,24 @@ const mongoose = require("mongoose");
 
 const RendelesSchema = new mongoose.Schema(
   {
-    marka: String,
-    ar: Number,
-    uzemanyag: String,
-    szin: String,
-    szemelyiszam: String,
-    rendeloemail: String,
+    marka:
+    { type:String
+      ,required: true} ,
+    ar:
+    { type: Number
+      ,required: true} ,
+    uzemanyag:
+    { type:String
+      ,required: true} ,
+    szin: 
+    { type:String
+      ,required: true} ,
+    szemelyiszam:
+     { type:String
+      ,required: true} ,
+    rendeloemail: 
+    { type:String
+      ,required: true} ,
   },
   { timestamps: true }
 );
